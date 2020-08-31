@@ -1,0 +1,14 @@
+{
+  "name": "library_api_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Idah Koome",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
