@@ -1,4 +1,4 @@
-module.exports = {
+pmodule.exports = {
   env: {
     browser: true,
     commonjs: true,
