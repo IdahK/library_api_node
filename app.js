@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 const express = require('express'); // import express
 const mongoose = require('mongoose'); //  interacts with the mongodb database 
+const bodyParser = require('body-parser');
 
 const app = express(); // initialize express
 const db = mongoose.connect('mongodb://localhost/bookAPI'); // connect to a database on mongo
@@ -9,9 +10,19 @@ const port = process.env.PORT || 3000;
 
 const Book = require('./models/bookModel.js'); // Book Model
 
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());;
+
 // access all books route via : /api/books
 // querying database to locate data
+// also allows searching/filtering of the data based n genre search string
 bookRouter.route('/books') 
+  .post((req, res) => {
+    const book =  new Book(req.body);
+
+    console.log(book);
+    return res.json(book);
+  })
   .get((req, res) => {
     const query = {};
     if(req.query.genre){
