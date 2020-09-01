@@ -1,16 +1,35 @@
 /* eslint-disable linebreak-style */
 const express = require('express'); // import express
+const mongoose = require('mongoose'); //  interacts with the mongodb database 
 
 const app = express(); // initialize express
-
+const db = mongoose.connect('mongodb://localhost/bookAPI'); // connect to a database on mongo
+const bookRouter = express.Router(); // create books route
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.render('hello.ejs');
-});
+const Book = require('./models/bookModel.js'); // Book Model
 
-app.get('/top', (req, res) => {
-  res.render('top.ejs');
+// access books route via : /api/books
+// querying database to locate data
+bookRouter.route('/books') 
+  .get((req, res) => {
+    const query = {};
+    if(req.query.genre){
+      query.genre = req.query.genre;
+    }
+    Book.find((err, books) => {
+    if(err){
+      return res.send(err);
+    } 
+      return res.json(books);                            
+    })
+  });
+
+//access the BookRouter via /api in the URL
+app.use('/api', bookRouter);
+
+app.get('/', (req, res) => {
+  res.send('Welcome to my Nodemon Library API');
 });
 
 app.listen(port, () => {
