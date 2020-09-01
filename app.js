@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 const Book = require('./models/bookModel.js'); // Book Model
 
-// access books route via : /api/books
+// access all books route via : /api/books
 // querying database to locate data
 bookRouter.route('/books') 
   .get((req, res) => {
@@ -22,6 +22,18 @@ bookRouter.route('/books')
       return res.send(err);
     } 
       return res.json(books);                            
+    })
+  });
+
+// route to get a single book
+bookRouter.route('/books/:bookId') 
+  .get((req, res) => {
+    
+    Book.findById(req.params.bookId, (err, book) => {
+    if(err){
+      return res.send(err);
+    } 
+      return res.json(book);                            
     })
   });
 
