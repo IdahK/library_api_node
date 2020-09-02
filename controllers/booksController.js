@@ -5,7 +5,8 @@ function booksController(Book){
         const book =  new Book(req.body);
     
         book.save();
-        return res.status(201).json(book); //send status and the created book
+        res.status(201);
+        return res.json(book); //send status and the created book
       }
 
      // search by genre

@@ -1,8 +1,9 @@
 pmodule.exports = {
   env: {
-    browser: true,
+    node: true,
     commonjs: true,
     es2020: true,
+    mmocha: true
   },
   extends: [
     'airbnb-base',
@@ -11,5 +12,5 @@ pmodule.exports = {
     ecmaVersion: 12,
   },
   rules: {
-  },
+  }
 };
