@@ -20,12 +20,19 @@ function booksController(Book){
         if(req.query.genre){
           query.genre = req.query.genre;
         }
-        Book.find((err, books) => {
+        Book.find(query, (err, books) => {
         if(err){
           return res.send(err);
         } 
-          return res.json(books);                            
-        })
+         
+          const returnBooks = books.map((book) => {
+              const newBook = book.toJSON();
+              newBook.links = {};
+              newBook.links.self = `http://${req.headers.host}/api/books/${book._id}`;
+              return newBook;
+            });
+          return res.json(returnBooks);                            
+        });
       }
 
       return {post, get};

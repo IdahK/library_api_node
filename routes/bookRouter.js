@@ -32,7 +32,15 @@ function routes(Book){
     // route for a single book based on Book Id
     bookRouter.route('/books/:bookId') 
         //get a single book based on Id
-        .get((req, res) => res.json(req.book))
+        .get((req, res) => {
+            const returnBook = req.book.toJSON();
+
+            returnBook.links = {};
+            const genre = req.book.genre.replace(' ','%20');
+            returnBook.links.FilterByThisGenre = `http://${req.headers.host}/api/books/?genre=${req.book.genre}`;
+
+            res.json(req.book);
+            })
 
         //implement put(replace book) for a book
         .put((req, res) => {
