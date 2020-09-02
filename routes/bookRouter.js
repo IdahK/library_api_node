@@ -83,6 +83,17 @@ bookRouter.route('/books/:bookId')
             }
             return res.json(book);
         });
+    })
+
+    // implemented the delete functionality for a book
+    //sends a 204 status(removed) after a successful removal
+    .delete((req, res) =>{
+        req.book.remove((err) => {
+            if(err){
+                return res.send(err);
+            }
+            return res.sendStatus(204);
+        });
     });
 
 return bookRouter;
