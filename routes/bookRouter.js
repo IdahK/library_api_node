@@ -49,7 +49,7 @@ bookRouter.route('/books/:bookId')
     //get a single book based on Id
     .get((req, res) => res.json(req.book))
 
-    //implement put/update for a book
+    //implement put(replace book) for a book
     .put((req, res) => {
         const { book } = req;;
         book.title = req.body.title;
