@@ -25,7 +25,7 @@ describe('Book Controller Tests:', () => {
 
 
             const controller = bookController(Book);
-            controller.post(req, rest);
+            controller.post(req, res);
             res.status.calledWith(400).should.equal(true, `Bad Status ${res.status.args[0][0]}`);
             // send an error for bad request
             res.send.calledWith('Title is required').should.equal(true);
