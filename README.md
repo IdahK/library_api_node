@@ -1,4 +1,4 @@
-# library_api_node
+# Book-Library API
 
 In this project, I challenged myself to create a very basic Book Directory REST Api using Nodejs. Definitely had to learn Javascript.
 
@@ -9,7 +9,7 @@ It exposes endpoints using the four most basic methods: `GET`, `POST`, `PUT` and
 Consuming the Api : access via ` /api `
 =================
 
-## Get all books
+#### Get all books
 URL: /api/books
 
 Method: GET
@@ -72,8 +72,8 @@ Response:
 ]
 ```
 
-## Get a book by id:
-URL: /api/books/{bookId} e.g api/books/5f56634e238e0a90a40a67a0
+#### Get a book by id:
+URL: /api/books/{bookId}   e.g api/books/5f56634e238e0a90a40a67a0
 
 ```json
 {
@@ -87,10 +87,10 @@ URL: /api/books/{bookId} e.g api/books/5f56634e238e0a90a40a67a0
     }
 }
 ```
-## Search a book by genre:
+#### Search a book by genre:
 METHOD: GET
 
-URL: /api/books//api/books?genre=genre_name 
+URL: /api/books/   e.g: /api/books?genre=genre_name 
 
 RequestHeaders: genre=<Genre Name>
     
@@ -114,7 +114,7 @@ Response:
 ]
 ```
 
-## Add a new book:
+#### Add a new book:
 URL: /api/books 
 
 METHOD: POST
@@ -138,8 +138,8 @@ Response
     "author": "Idah Koome"
 }
 ```
-## Update details of a book
-URL: /api/books/{bookId} e.g /api/books/5f566ba49a9f9721e08b2449
+#### Update details of a book
+URL: /api/books/{bookId}    e.g: /api/books/5f566ba49a9f9721e08b2449
 
 METHOD: PATCH
 
@@ -179,8 +179,8 @@ Response
     "__v": 0
 }
 ```
-## Delete a book record from directory
-URL: /api/books/{bookId}  e.g /api/books/5f566ba49a9f9721e08b2449
+####  Delete a book record from directory
+URL: /api/books/{bookId}   e.g: /api/books/5f566ba49a9f9721e08b2449
 
 METHOD: DELETE
 
