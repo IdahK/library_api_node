@@ -24,7 +24,7 @@ Response:
         "genre": "Historical Fiction",
         "author": "Lev Nikolayevich Tolstoy",
         "links": {
-            "self": "http://localhost:4000/api/books/5f56634e238e0a90a40a67a0"
+            "self": "..../api/books/5f56634e238e0a90a40a67a0"
         }
     },
     {
@@ -34,7 +34,7 @@ Response:
         "genre": "Historical Fiction",
         "author": "Victor Hugo",
         "links": {
-            "self": "http://localhost:4000/api/books/5f56634e238e0a90a40a67a1"
+            "self": ".../api/books/5f56634e238e0a90a40a67a1"
         }
     },
     {
@@ -44,7 +44,7 @@ Response:
         "genre": "Science Fiction",
         "author": "H. G. Wells",
         "links": {
-            "self": "http://localhost:4000/api/books/5f56634e238e0a90a40a67a2"
+            "self": ".../api/books/5f56634e238e0a90a40a67a2"
         }
     },
     {
@@ -54,7 +54,7 @@ Response:
         "genre": "Science Fiction",
         "author": "Jules Verne",
         "links": {
-            "self": "http://localhost:4000/api/books/5f56634e238e0a90a40a67a3"
+            "self": "..../api/books/5f56634e238e0a90a40a67a3"
         }
     },
    . .. . ..
@@ -66,7 +66,7 @@ Response:
         "genre": "Biography",
         "author": "Lev Nikolayevich Tolstoy",
         "links": {
-            "self": "http://localhost:4000/api/books/5f56634e238e0a90a40a67a7"
+            "self": ".../api/books/5f56634e238e0a90a40a67a7"
         }
     }
 ]
@@ -83,7 +83,7 @@ URL: /api/books/{bookId}   e.g api/books/5f56634e238e0a90a40a67a0
     "genre": "Historical Fiction",
     "author": "Lev Nikolayevich Tolstoy",
     "links": {
-        "FilterByThisGenre": "http://localhost:4000/api/books/?genre=Historical Fiction"
+        "FilterByThisGenre": ".../api/books/?genre=Historical Fiction"
     }
 }
 ```
@@ -108,7 +108,7 @@ Response:
         "genre": "History",
         "author": "Mark Twain",
         "links": {
-            "self": "http://localhost:4000/api/books/5f56634e238e0a90a40a67a6"
+            "self": ".../api/books/5f56634e238e0a90a40a67a6"
         }
     }
 ]
